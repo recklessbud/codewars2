@@ -630,6 +630,28 @@ return the name of the chosen Player(name is a property of Player objects, e.g P
     }
   }
 
+    // first 7kyu
+    // looping through an array in the reverse order
+
+      function reverseArray(arr){
+        const newArr = []
+          for(let i = arr.length -1; i >=0; i--){
+             let isGreater = true
+              for(let j = i + 1; j < arr.length; j++){
+                if(arr[i] <= arr[j]){
+                  isGreater = false
+                  break;
+                }
+              }
+              if(isGreater){
+                newArr.push(arr[i])
+              }
+          }
+          return newArr.reverse()
+      }
+      
+      // console.log(reverseArray([1, 4, 6, 3, 5]))
+
 
     function spaceRepitionDay1(array){
     //   sheeps
