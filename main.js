@@ -632,25 +632,51 @@ return the name of the chosen Player(name is a property of Player objects, e.g P
 
     // first 7kyu
     // looping through an array in the reverse order
+    /**An element in an array is dominant if it is greater than all elements to its right. 
+     * You will be given an array and your task will be to return a list of all dominant elements. */
 
       function reverseArray(arr){
+        //declare a variable to be an empty array
         const newArr = []
+        //  loop through the give array from the right to left
           for(let i = arr.length -1; i >=0; i--){
+            // set a dominant varaible to true if it is
              let isGreater = true
+            //  now iterate through the reversed array 
               for(let j = i + 1; j < arr.length; j++){
+                // compare the elements in the array
                 if(arr[i] <= arr[j]){
                   isGreater = false
-                  break;
+                  break;//if the value is no longer dominant or equal is found break stop
                 }
               }
               if(isGreater){
-                newArr.push(arr[i])
+                //push the element  dominant or equal to the dominant number;
+                newArr.unshift(arr[i])
               }
           }
-          return newArr.reverse()
+          //return he araay reversed to make the start
+          return newArr
       }
       
-      // console.log(reverseArray([1, 4, 6, 3, 5]))
+      console.log(reverseArray([1, 4, 6, 3, 5]))
+      //solution 2
+
+       const solve = arr => {
+        const res = []
+          // arr.reduceRight((acc, c)=> (c > acc ?  (res.unshift(c), c) : acc), 0) //
+          arr.reduceRight((acc, c) => {
+            if(acc < c){
+              res.unshift(c);
+              return c
+            }else{
+              return acc
+            }
+          }, 0)
+          return res
+       }
+      // console.log(solve([1, 4, 6, 3, 5]))
+
 
 
     function spaceRepitionDay1(array){
