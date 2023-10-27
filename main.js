@@ -679,6 +679,53 @@ return the name of the chosen Player(name is a property of Player objects, e.g P
 
 
 
+/**Write a function that takes an array of strings as an argument and returns a sorted array containing the same strings,
+ *  ordered from shortest to longest.
+For example, if this array were passed as an argument
+["Telescopes", "Glasses", "Eyes", "Monocles"]
+Your function would return the following array:
+["Eyes", "Glasses", "Monocles", "Telescopes"]
+All of the strings in the array passed to your function will be different lengths, so you will not have to decide 
+how to order multiple strings of the same length. */
+      function stringSort(string){
+           return string.sort((a, b)=> a.length - b.length )
+      }
+
+      // console.log(stringSort(["eyes", "logse", "changes", "is"]))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     function spaceRepitionDay1(array){
     //   sheeps
         // let presentSheep = 0
