@@ -688,6 +688,7 @@ Your function would return the following array:
 All of the strings in the array passed to your function will be different lengths, so you will not have to decide 
 how to order multiple strings of the same length. */
       function stringSort(string){
+        //returning the sorted array with .sort and passing the .length prop to the parameters in the sort function
            return string.sort((a, b)=> a.length - b.length )
       }
 
