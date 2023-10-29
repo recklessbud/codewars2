@@ -694,7 +694,23 @@ how to order multiple strings of the same length. */
 
       // console.log(stringSort(["eyes", "logse", "changes", "is"]))
 
+      // next distinct year
 
+      // function distinctYear(year){
+        
+      // }
+
+      // console.log(distinctYear(1010))
+
+        function findDp(arr) {
+          // const duplicate = 0
+        const duplicate =  arr.sort((a, b) => a-b).filter((element, index) => arr.indexOf(element) !== index)
+            const last = Number(duplicate)
+             return last
+        }
+
+
+        console.log(findDp([4, 5, 6, 1, 3, 2, 2]))
 
 
 
