@@ -730,7 +730,23 @@ For example: */
           return newArr.slice(-num)
   }
 
-  console.log(isEven([1, 2, 3, 4, 5, 6, 7, 8, 9], 3));
+  // console.log(isEven([1, 2, 3, 4, 5, 6, 7, 8, 9], 3));
+  /**Given an array of ones and zeroes, convert the equivalent binary value to an integer.
+
+Eg: [0, 0, 0, 1] is treated as 0001 which is the binary representation of 1.
+
+Examples:
+
+ */
+
+  const binaryZeros = arr =>{    
+    //assigned a varaible to an array converted to a string which all commas are been replaced
+   const digits =  arr.toString().replaceAll(",", "")
+     //after converting we use a parse int which takes a binary(mostly in strings) and the base number to be converted to
+     return parseInt(digits, 2)
+   }
+
+  console.log(binaryZeros([0, 1, 1 , 0]))
 
 
 
