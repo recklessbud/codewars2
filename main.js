@@ -746,8 +746,80 @@ Examples:
      return parseInt(digits, 2)
    }
 
-  console.log(binaryZeros([0, 1, 1 , 0]))
+  // console.log(binaryZeros([0, 1, 1 , 0]))
 
+
+  const whosOnline =(friends) => {
+    //  let allFriends = {
+    //    online: [],
+    //    offline: [], 
+    //    away: []
+    //  }  
+    //  for (const element in friends) {
+    //     //  console.log(element)
+    //       if(element.status === "online" && element.lastActivity <= 10){
+    //          allFriends.away.push(element.username)
+    //       }else if(element.status === "offline"){
+    //         allFriends.offline.push(element.username)
+    //       }else{
+    //         allFriends.online.push(element.username)
+    //       }
+
+    //  }
+    //  for (const guests in allFriends) {
+    //    if (allFriends[guests].length === 0) {
+    //      delete allFriends[guests];
+    //    }
+    //  }
+
+    //  return allFriends
+    const status = {
+      online: [],
+      offline: [],
+      away: [],
+    };
+
+    for (const friend of friends) {
+      if (friend.status === "offline") {
+        status.offline.push(friend.username);
+      } else {
+        if (friend.lastActivity > 10 && friend.status === "online") {
+          status.away.push(friend.username);
+        } else {
+          status.online.push(friend.username);
+        }
+      }
+    }
+    for (const guests in status) {
+      if (status[guests].length === 0) {
+        delete status[guests];
+      }
+    }
+    return status;
+  }
+
+
+  
+  
+  const allBoys = [
+    {
+      username: "David",
+      status: "online",
+      lastActivity: 10,
+    },
+    {
+      username: "Lucy",
+      status: "offline",
+      lastActivity: 22,
+    },
+    {
+      username: "Bob",
+      status: "online",
+      lastActivity: 104,
+    },
+  ];
+
+  console.log(whosOnline([allBoys]));
 
 
 
