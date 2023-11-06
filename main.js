@@ -801,25 +801,75 @@ Examples:
 
   
   
-  const allBoys = [
-    {
-      username: "David",
-      status: "online",
-      lastActivity: 10,
-    },
-    {
-      username: "Lucy",
-      status: "offline",
-      lastActivity: 22,
-    },
-    {
-      username: "Bob",
-      status: "online",
-      lastActivity: 104,
-    },
-  ];
+  // const allBoys = [
+  //   {
+  //     username: "David",
+  //     status: "online",
+  //     lastActivity: 10,
+  //   },
+  //   {
+  //     username: "Lucy",
+  //     status: "offline",
+  //     lastActivity: 22,
+  //   },
+  //   {
+  //     username: "Bob",
+  //     status: "online",
+  //     lastActivity: 10,
+  //   },
+  // ];
 
-  console.log(whosOnline([allBoys]));
+  // console.log(whosOnline(allBoys));
+/**In this kata you will be given a random string of letters and tasked with returning them as
+ *  a string of comma-separated sequences sorted alphabetically, with each sequence starting with an uppercase character 
+ * followed by n-1 lowercase characters, where n is the letter's alphabet position 1-26. */
+
+
+   function alphaStr(str){
+    // declared a variable containing all the alphabets in lowercase
+    const alphabeticallyOrder = "abcdefghijklmnopqrstuvwxyz"
+    // set an empty array
+      const sequences = []
+
+      for (let index = 0; index < str.length; index++) {// loop through the srting input 
+        // element = the values
+        const element = str[index];
+        //  set all the values in the array to lower case
+        const char = element.toLowerCase()
+        //  in finding the position, the alphabets are returned withh their first index adding those not found in the array 
+        const position =  alphabeticallyOrder.indexOf(char) + 1;
+          // element then changed into uppercase and the lowercase alphabet are repeated by the position, minns 1
+        const alphabetSequence = element.toUpperCase() + char.repeat(position - 1)
+        // the final solution is pushed into the array
+        sequences.push(alphabetSequence)
+        
+      }
+      // the array is returned after sorting and joining it
+      return sequences.sort().join(",")
+
+   }
+
+  //  console.log(alphaStr('Rtymopler'))
+  
+
+function alphaSeq(s) {
+  const alphabet = "abcdefghijklmnopqrstuvwxyz";
+  const sequences = [];
+
+  for (let i = 0; i < s.length; i++) {
+    const char = s[i].toLowerCase();
+    const position = alphabet.indexOf(char) + 1;
+    const letterSequence = s[i].toUpperCase() + char.repeat(position - 1);
+    sequences.push(letterSequence);
+  }
+
+  return sequences.sort().join(",");
+}
+
+// Example usage
+// const result = alphaSeq("ZpglnRxqenU");
+// console.log(result);
+
 
 
 
