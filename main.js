@@ -871,7 +871,33 @@ function alphaSeq(s) {
 // console.log(result);
 
 
+const mispelledWords = (word1, word2) => {
+const str1 = word1
+const str2 = word2
 
+//  check if the strings are t
+if(str1.length < str2.length){
+  let temp = str1
+   str1 = str2
+   str2 = temp
+}
+
+let count = 0
+ for (let index = 0, j = 0; index < str1.length; index++, j++) {
+       if (str1[index] !== str2[j]) {
+          count++
+          if (str1.length > str2.length) {
+            index++
+          }
+
+       }
+  ;
+ }
+
+return count < 2
+}
+
+console.log(mispelledWords('versed', 'persep'))
 
 
 
