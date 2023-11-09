@@ -897,7 +897,40 @@ let count = 0
 return count < 2
 }
 
-console.log(mispelledWords('versed', 'persep'))
+// console.log(mispelledWords('versed', 'persep'))
+/**Write a function that takes one or more arrays and returns a new array of unique values,
+ *  in the order of the original provided arrays.
+In other words, all values present from all arrays should be included in their original order,
+ but with no duplicates in the final array.
+The unique numbers should be sorted by their original order, but the final array should not be sorted in numerical order. */
+
+function uniteUnion(arr, arr2, arr3){
+  // simple but tricky
+
+  //declare an empty array 
+    let finalArray = []
+    // loop through the array af arguments passed in the function
+    for (let i = 0; i < arguments.length; i++) {
+      // store the elements in the loop to a variable
+      const element = arguments[i];
+      // loop through the array at hand the receive array
+         for (let  j= 0; j < element.length; j++) {
+          // store it
+          const arrayAtHand = element[j];
+        //check if the arguments to be pushed as an index of the array at hand loop  
+          // if not push it
+          if (finalArray.indexOf(arrayAtHand) < 0) {
+             finalArray.push(arrayAtHand)
+          }
+         }
+      
+        
+    }
+
+    return finalArray
+}
+
+console.log(uniteUnion([1,3,4,5], [1,6,8,9], [2,5]))
 
 
 
