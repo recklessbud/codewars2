@@ -959,7 +959,29 @@ After your function finds the needle it should return a message (as a string) th
   // console.log(findHay(["lop", "kuy", "nee", "pop", "needle",23]))
 
 
+// solving fizz buzz 
 
+const FizzBuzz = n =>{
+  const newArr = []
+      for (let j = 1; j <= n; j++) {
+        // const element = n[j];
+        if (j % 5 === 0 && j % 3 === 0) {
+          newArr.push("FizzBuzz");
+        } else if (j % 3 === 0) {
+          newArr.push("Fizz");
+        } else if (j % 5 === 0) {
+          newArr.push("Buzz");
+        } else {
+          newArr.push(j);
+        }
+        
+      }
+
+      return newArr
+
+}
+
+console.log(FizzBuzz(30))
 
 
 
