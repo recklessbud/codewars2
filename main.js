@@ -930,7 +930,33 @@ function uniteUnion(arr, arr2, arr3){
     return finalArray
 }
 
-console.log(uniteUnion([1,3,4,5], [1,6,8,9], [2,5]))
+// console.log(uniteUnion([1,3,4,5], [1,6,8,9], [2,5]))
+
+
+// the haystack thing
+
+/**Can you find the needle in the haystack?
+
+Write a function findNeedle() that takes an array full of junk but containing one "needle"
+
+After your function finds the needle it should return a message (as a string) that says:
+
+"found the needle at position " plus the index it found the needle, so: */
+  function findHay(haystack){
+
+    for (let i = 0; i < haystack.length; i++) {
+       const element = haystack[i]
+         if(element.includes("needle")){
+          return `found the needle at position ${haystack.indexOf("needle")}`;
+         }else{
+           i
+         }
+      
+    }
+
+  }
+
+  // console.log(findHay(["lop", "kuy", "nee", "pop", "needle",23]))
 
 
 
