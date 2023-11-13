@@ -975,7 +975,8 @@ const FizzBuzz = n =>{
           newArr.push(j);
         }
         
-      }
+      } 
+      
 
       return newArr
 
