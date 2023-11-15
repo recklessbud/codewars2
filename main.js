@@ -978,12 +978,40 @@ const FizzBuzz = n =>{
       } 
       
 
-      return newArr
+      // return newArr
 
 }
 
-console.log(FizzBuzz(30))
+// console.log(FizzBuzz(30))
+/**In this kata, you will write an arithmetic list which is basically a list that contains consecutive terms in the sequence.
+You will be given three parameters :
 
+first the first term in the sequence
+c the constant that you are going to ADD ( since it is an arithmetic sequence...)
+l the number of terms that should be returned
+Useful link: Sequence
+
+Be sure to check out my Arithmetic sequence Kata first ;)
+Don't forget about the indexing pitfall ;) */
+
+
+const arithmeticList = (first, c, l) => {
+  const arithmetic = []
+  // const firstly = Math.abs(first)
+    for(let i = 0; i < l; i++){
+         const formula = first + (i * c);
+        //  return formula
+        // if (i > 0) {
+         arithmetic.push(formula);
+          
+        // }
+
+    }
+
+    return arithmetic
+}
+
+console.log(arithmeticList(0, 1, 20))
 
 
 
