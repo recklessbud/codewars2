@@ -1011,7 +1011,61 @@ const arithmeticList = (first, c, l) => {
     return arithmetic
 }
 
-console.log(arithmeticList(0, 1, 20))
+// console.log(arithmeticList(0, 1, 20))
+
+
+/**\For "x", determine how many positive integers less than or equal to "x" are odd but not prime.
+ *  Assume "x" is an integer between 1 and 10000.
+
+Example: 5 has three odd numbers (1,3,5) and only the number 1 is not prime, so the answer is 1
+
+Example: 10 has five odd numbers (1,3,5,7,9) and only 1 and 9 are not prime, so the answer is 2 */
+
+function oddNotPrime(n){
+   //helper function to check if its prime
+    function isPrime(params) {
+      if (params < 2) {
+         return false
+      }
+       for (let i = 2; i <= Math.sqrt(params); i++) {
+        // const element = array[i];
+        if(params % i === 0){
+          return false
+        }
+        
+       }
+      
+      return true 
+     }
+     let countNum = 0
+      for (let j = 1; j <= n; j++) {
+        if(j % 2!==0 && !isPrime(j))
+        countNum++
+      }
+    
+//   let oddNum = []
+//   let countNum = 0
+//   for (let i = 1; i <= n; i++) {
+//     // console.log(i)
+//      if(i % 2 !== 0){
+//     oddNum.push(i);
+//      }
+//   //  if(i % n === 1 && i % 1 === i){
+//   }
+
+//    for (let j = 1; j <= oddNum.length; j++) {
+//      const element = oddNum[j];
+
+//       //  console.log(cal)
+//       if(element % 2){
+//         countNum++
+//    }
+// }
+
+   return countNum;
+
+}
+console.log(oddNotPrime(5))
 
 
 
@@ -1033,7 +1087,7 @@ console.log(arithmeticList(0, 1, 20))
 
 
 
-    function spaceRepitionDay1(array){
+    // function spaceRepitionDay1(array){
     //   sheeps
         // let presentSheep = 0
         //    for (let index = 0; index < array.length; index++) {
@@ -1082,7 +1136,7 @@ console.log(arithmeticList(0, 1, 20))
       //   return emptyString
     // sort and addind
     //  return array.sort()[0].split('').join('***')
-    }
+    // }
 
     
 
@@ -1107,4 +1161,4 @@ console.log(arithmeticList(0, 1, 20))
 
 
 // WE GO GET
-// we go get */
+// we go get */}
