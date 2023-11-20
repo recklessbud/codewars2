@@ -1065,10 +1065,52 @@ function oddNotPrime(n){
    return countNum;
 
 }
-console.log(oddNotPrime(5))
+// function sortValue(arr) {
+//   // Custom comparator function
+//   const comparator = (a, b) => {
+//     const productA = a * arr.indexOf(a) + 1; // Product of value and index for A
+//     const productB = b * arr.indexOf(b) + 1; // Product of value and index for B
 
+//     return productA - productB;
+//   };
 
+//   // Sort the array using the comparator
+//   const sortedArray = arr.slice().sort(comparator);
 
+//   return sortedArray;
+// }
+
+// // Example usage:
+// console.log(sortValue([23, 2, 3, 4, 5]))
+
+// function calibrate(inputArray) {
+//     var sortedArray = inputArray.sort((a, b) => a - b);
+//     var calibrationSequence = sortedArray.map((x, index )=> x * index);
+//     return calibrationSequence;
+// }
+
+// console.log(calibrate([23, 2, 3, 4,5]));    //Output: [3, 6, 9, 12, 15]
+
+function sortByValueAndIndex(array) {
+  console.log(array);
+  let res = [];
+  for (let i = 0; i < array.length; i++) {
+    res[i] = array[i] * (i + 1);
+  }
+  for (let i = 0; i < res.length; i++) {
+    for (let j = 0; j < array.length; j++) {
+      if (res[i] >= res[j]) {
+        let swap = res[i];
+        res[i] = res[j];
+        res[j] = swap;
+        swap = array[i];
+        array[i] = array[j];
+        array[j] = swap;
+      }
+    }
+  }
+  return array.reverse();
+}
 
 
 
